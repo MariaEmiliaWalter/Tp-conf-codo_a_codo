@@ -1,7 +1,10 @@
-/* * {
-  font-size: 14px;
-} */
+*{
+margin: 0px;
+padding: 0px;
+font-size: 14px;
+}
 
+/*Nav*/
 
 .colorNav {
   background-color: #34393f;
@@ -12,59 +15,67 @@
   margin-right: 5%;
 }
 
+
+.text1_7rem{
+  font-size: 1.7rem;
+}
+
+
 /*First Div*/
-.boxImg {
-  display: flex; 
-  width: 100%;
- height: 800px;
-background-image: url('assets\\img\\fondo_div2.jpg');
-filter: brightness(0.5);
-
-}
-
-.box{ 
- display: flex; 
+.box {
+position: relative;
+display: flex; 
+height: 56rem;
 width: 100%;
- height: 800px;
 }
+
+.boxImg {
+  width: 100%;
+  object-fit: none;
+  filter: brightness(0.5);
+}
+
+
 
 
 /*Text with CTA*/
-.text{
-  position: absolute;
- justify-content:flex-end; 
-  color: white;  
-  top: 45%; 
-  left: 60%; 
-  text-align: right;
-  padding-right: 10%;
-  padding-left: 2%;
-}
-.text p {
-font-size: 20px;
+
+.textPosition{
+  width:50%;
+  top: 20rem; 
+  padding-right: 8rem;
+  font-weight: 450;
 }
 
-.button-group{
-justify-content:space-between;
+.textPosition h1{
+font-size: 4rem;
 }
-
 
 /*speakeres*/
 
-.speakerBox{
-  margin-left: 4%;
-  margin-right: 4%;
-}
 
 .speakerBox p{
-  text-align-last: center;
+  text-align: center;
 }
 
 .speakerBox h1{
-  text-align-last: center;
+  text-align: center;
   line-height:14px
 }
 
 .body_span span .badge{
 font-size: 100px
+}
+
+.speakerCard{
+  width: 80%;
+}
+
+.textSize{
+  font-size: 1.1rem;
+}
+
+
+textarea{
+  resize: none;
 }
