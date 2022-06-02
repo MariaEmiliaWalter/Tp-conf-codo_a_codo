@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark colorNav">
-      <div class="container-fluid d-flex containerNav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark colorNav" aria-label="Main navigation">
+      <div class="container-fluid containerNav"> <!--d-flex-->
         <div>
           <img
             src="assets\img\codo_a_codo.png"
@@ -24,45 +25,39 @@
             height="90"
           />
           <a class="navbar-brand text1_7rem" href="#">Conf Bs As</a>    
-
         </div> 
+        
         <div class="justify-content-end">
           <button
             class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            id="navbarSideCollapse"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <span class="navbar-toggler-icon"></span></button>
+
+          <div class="navbar-collapse offcanvas-collapse" id="navbarSide">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbarContent">
               <li class="nav-item">
-                <a class="nav-link active text1_7rem" aria-current="page" href="#"
-                  >La Conferencia</a
-                >
+                <a class="nav-link active text1_7rem"  aria-current="page">La Conferencia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text1_7rem" href="#">Los Oradores</a>
+                <a class="nav-link text1_7rem" >Los Oradores</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text1_7rem" href="#">Lugar y fecha</a>
+                <a class="nav-link text1_7rem">Lugar y fecha</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text1_7rem" href="#">Conviertete en orador</a>
+                <a class="nav-link text1_7rem">Conviertete en orador</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-success text1_7rem" href="#">Comprar tickets</a>
+                <a class="nav-link text-success text1_7rem">Comprar tickets</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
-
 
    
      <!-- Portada con CTA -->
@@ -76,11 +71,10 @@
           expertos que están creando el futuro de Internet. Ven a conocer a
           miembros del evento, a otros estudiantes de Codo a Codo y a los
           oradores de primer nivel que tenemos para ti. ¡Te esperamos!</p>
-          <p>
-            <a href="#" class="btn btn-outline-light my-2 fs-3">Quiero ser orador</a>
-            <a href="#" class="btn btn-success my-2 fs-3">Comprar tickets</a>
-          </p>
-      
+          <!-- buttons -->
+            <a href="#" class="btn btn-outline-light my-2 fs-3 mt-3">Quiero ser orador</a>
+            <a href="#" class="btn btn-success my-2 fs-3 ms-3 mt-3">Comprar tickets</a>
+
       </div>
     </div>
 
@@ -139,7 +133,7 @@
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-6 row-cols-xs-1">
-      <img src="/assets/img/Honolulu_octubre.jpg" class="img-fluid rounded-start" alt="...">
+      <img src="/assets/img/Honolulu_octubre.jpg" class="img-fluid rounded-start boxImg2" alt="...">
     </div>
     <div class="col-md-6 row-cols-xs-1 bg-dark">
       <div class="card-body text-white">
@@ -152,63 +146,54 @@
 </div>
  
   <!--Convertir en orador-->
-  <form class="text-center ">
-  <div class="col-12 speakerBox">
+  <form class="text-center container">
+  <div class="speakerBox">
     <p class="fs-5">CONVIÉRTETE EN UN <h1>ORADOR</h1></p>
-    <div class="row ms-3">
+    <div class="row">
     <p class="fs-5">Anótate como orador para dar una charla ignite. Cuéntanos de que quieres hablar!</p>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-4 mb-4 justify-content-center">
+    <div class="row row-cols-md-4 mb-4 justify-content-center"> <!--row-cols-2-->
       <div class="col">
-      <input type="text" class="form-control col-4 fs-5" id="inputName" aria-label="Nombre"  placeholder="Nombre"></div>
+        <input type="text" class="form-control col-4 fs-5" id="inputName" aria-label="Nombre"  placeholder="Nombre"></div>
       <div class="col">
-      <input type="text" class="form-control col-4 fs-5" id="inputLastName" aria-label="Apellido"  placeholder="Apellido">
+        <input type="text" class="form-control col-4 fs-5" id="inputLastName" aria-label="Apellido"  placeholder="Apellido">
       </div>
     </div>
 
     <div class="row justify-content-center row-cols-md-2 mb-3" >
       <div class="col">
-      <textarea class="form-control col-4 fs-2" aria-describedby="temaCharla" rows="4" placeholder="Sobre qué quieres hablar?"></textarea>
-        <div id="temaCharla" class="form-text justify-content-start">Recuerda incluir un título para tu charla</div> 
+        <textarea class="form-control col-12 fs-2" aria-describedby="temaCharla" rows="4" placeholder="Sobre qué quieres hablar?"></textarea>
+        <div id="temaCharla" class="form-text text-start textSize mb-2">Recuerda incluir un título para tu charla</div> 
     </div> 
-
     </div>
   </div>
-  <button type="submit" class="btn btn-success col-6">Enviar</button>
+  <div class="row justify-content-center row-cols-md-2">  
+    <div class="col">
+    <button type="submit" class="btn btn-success col-12 mb-3 fs-3 ">Enviar</button>
+  </div>
+  </div>
 </form>
 
 
 
+  <!--footer-->
+<footer class="d-flex flex-wrap justify-content-center align-items-center py-3 mt-3 footerNav">
+    <ul class="nav col-lg-12 justify-content-between w-75">
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Preguntas frecuentes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Contáctanos</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Prensa</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Conferencias</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Términos y condiciones</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Privacidad</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-3 text-white fs-4">Estudiantes</a></li>
+    </ul>
+  </footer>
 
-    <!--Footer-->
-    <footer>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#idNavbar" aria-controls="idNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse justify-content-md-center" id="idNavbar">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link " href="">Centered nav only</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Disabled</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </footer>
+  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-  </body>
+  <script src="/index.js"></script>  </body>
 </html>
