@@ -1,0 +1,206 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+}
+
+/*Nav*/
+.colorNav {
+  background-color: #34393f;
+}
+
+.containerNav {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.text1_7rem {
+  font-size: 1.7rem;
+}
+
+ul.navbarContent a:hover {
+  color: rgb(253, 204, 43) !important;
+  font-weight: 480;
+}
+
+ul.navbarContent a#buyTickets:hover {
+  color: rgb(93, 207, 0) !important;
+  font-weight: 500;
+}
+
+/*img con cta*/
+.box {
+  position: relative;
+  display: flex;
+  height: 60rem;
+  width: 100%;
+}
+
+.boxImg {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.textPosition {
+  width: 40%;
+  top: 23rem;
+  padding-right: 8rem;
+  font-weight: 450;
+}
+
+.textPosition h1 {
+  font-size: 4rem;
+}
+
+/*speakeres*/
+.speakerBox p {
+  text-align: center;
+}
+
+.speakerBox h1 {
+  text-align: center;
+  line-height: 14px;
+}
+
+.body_span span .badge {
+  font-size: 100px;
+}
+
+.speakerCard {
+  width: 80%;
+}
+
+.textSize {
+  font-size: 1.1rem;
+}
+
+/*oradores*/
+textarea {
+  resize: none;
+}
+
+/*conoce mas*/
+.boxImg2 {
+  height: 100%;
+  object-fit: cover;
+}
+
+/*footer*/
+.footerNav {
+  background-color: #1d4c66;
+}
+
+/*TICKETS*/
+.ticketsCont {
+  margin-top: 10rem;
+}
+
+#estudiante {
+  border-color: rgb(12, 100, 224);
+  border-width: 0.15rem;
+}
+
+#trainee {
+  border-color: #00ddb0;
+  border-width: 0.15rem;
+}
+
+#junior {
+  border-color: #ffb108;
+  border-width: 0.15rem;
+}
+
+/*media queries*/
+@media screen and (max-width: 1043px) {
+  .textSize {
+    font-size: 1rem;
+  }
+  .fs-5 {
+    font-size: 1rem !important;
+  }
+  .fs-4 {
+    font-size: 1.1rem !important;
+  }
+  h1 {
+    font-size: 3rem !important;
+  }
+  .fs-3 {
+    font-size: 1.2rem !important;
+  }
+  .fs-2 {
+    font-size: 1.3rem !important;
+  }
+  .textPosition {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: 450;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .textSize {
+    font-size: 0.8rem;
+  }
+  .fs-5 {
+    font-size: 1rem !important;
+  }
+  .fs-4 {
+    font-size: 0.7rem !important;
+  }
+  h1 {
+    font-size: 2rem !important;
+  }
+  .fs-3 {
+    font-size: 0.4rem !important;
+  }
+  .textPosition {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: 450;
+  }
+  .containerNav {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .text1_7rem {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .offcanvas-collapse {
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: #343a40;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  .offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+  }
+  .nav-underline .nav-link {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+
+  .nav-underline .nav-link:hover {
+    color: #29b075;
+  }
+
+  .nav-underline .active {
+    font-weight: 500;
+    color: #343a40;
+  }
+}
