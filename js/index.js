@@ -20,56 +20,77 @@ const toggleAllElements = (elementos, clase) => {
   }
 };
 
+var resultado = document.getElementById("resultadoTotal");
+var cant = document.getElementById("inputCantidad");
+var email = document.getElementById("inputEmail");
+var firstName = document.getElementById("inputName");
+var lastName = document.getElementById("inputLastName");
+var category = document.getElementById("categoriaSelector");
+
 function handleChangePrice() {
-  //categoria
-  var value = document.getElementById("categoriaSelector").value;
-  //cantidad de entradas
-  var cant = document.getElementById("inputCantidad").value;
+
+  let categoryValue =category.value
+  let cantValue = cant.value;
 
   var total = 0;
   var descuento = 0;
-  switch (value) {
+  switch (categoryValue) {
     case "1":
-      total = cant * 200 - cant * (200 * 0.8);
-      descuento = cant * (200 * 0.8);
+      total = cantValue * 200 - cantValue * (200 * 0.8);
+      descuento = cantValue * (200 * 0.8);
       break;
     case "2":
-      total = cant * 200 - cant * (200 * 0.5);
-      descuento = cant * (200 * 0.5);
+      total = cantValue * 200 - cantValue * (200 * 0.5);
+      descuento = cantValue * (200 * 0.5);
       break;
     case "3":
-      total = cant * 200 - cant * (200 * 0.15);
-      descuento = cant * (200 * 0.15);
+      total = cantValue * 200 - cantValue * (200 * 0.15);
+      descuento = cantValue * (200 * 0.15);
       break;
   }
 
-  document.getElementById("resultadoTotal").innerHTML = parseFloat(total);
+  resultado.innerHTML = parseFloat(total);
   document.getElementById("descuento").innerHTML = parseFloat(descuento);
 }
 
-function onSubmitTicketFinal() {
-  //variables
-  var resultado = document.getElementById("resultadoTotal").innerHTML;
-  var cant = document.getElementById("inputCantidad").value;
-  var name = document.getElementById("inputName").value;
-  var lastName = document.getElementById("inputLastName").value;
-  var cod =
-    name[0].toUpperCase() + cant + lastName[0].toUpperCase() + resultado;
 
-  //completo TicketFinal
-  document.getElementById("name").innerHTML = name;
+
+// var btn= document.getElementById('btnReservar').innerHTML;
+// do{btn.classList.add('disabled')}
+// while(email.length()==0);
+
+
+
+
+
+function onSubmitTicketFinal() {
+  var cod = firstName[0].value.toUpperCase() + cant.value + lastName[0].value.toUpperCase() + resultado.innerHTML;
+//completo TicketFinal
+  document.getElementById("firstName").innerHTML = firstName;
   document.getElementById("apellido").innerHTML = lastName;
   document.getElementById("cantTickets").innerHTML = cant;
   document.getElementById("finalPrice").innerHTML = resultado;
   document.getElementById("reservaCode").innerHTML = cod;
 
-  //chequeo
-  console.log("nombre: " + name);
-  console.log("apellido: " + lastName);
-  console.log("cant: " + cant);
-  console.log("codigo generado: " + cod);
-  console.log("preciototal: " + resultado);
+// after submit 
+//cambiar button => spin => ¡listo!   
+// ambos buttons => toggle con class display hidden. 
 }
+
+
+function beforeSubmit() {
+var btn= document.getElementById('btnReservar').classList
+btn.add('disabled')
+let firstNameValue=firstName.value.length
+let lastNameValue=lastName.value.length
+let emailValue=email.value.length
+
+if(emailValue != 0 && firstNameValue != 0 && lastNameValue != 0 && cant.value > 0){
+  btn.remove('disabled')
+  }
+ 
+}
+
 
 function imprimir(id) {
   var printResumen = document.getElementById(id).innerHTML;
@@ -80,4 +101,17 @@ function imprimir(id) {
   w.print();
   w.close();
   return true;
+}
+
+function reservar(){
+  // var btn= document.getElementById('btnReservar').innerHTML
+  // do{
+  //   btn.classList.remove('diseable')
+  // }
+  // while (resultado.length()!==0 && cant.length()!==0 && firstName.length()!==0 && lastName.length()!==0 && cod.length()!==0)
+
+
+// <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+//             <span class="visually-hidden">Loading...</span>
+
 }
