@@ -10,12 +10,10 @@
     });
 })();
 
-var margin = document.querySelectorAll(".offcanvas-collapse li.nav-item");
 
-//Añade a todos los elementos de esa clase
+var margin = document.querySelectorAll(".offcanvas-collapse li.nav-item");
 const toggleAllElements = (elementos, clase) => {
   for (var i = 0; i < elementos.length; i++) {
-    // añado a los elementos individuales
     elementos[i].classList.toggle(clase);
   }
 };
@@ -26,9 +24,13 @@ var email = document.getElementById("inputEmail");
 var firstName = document.getElementById("inputName");
 var lastName = document.getElementById("inputLastName");
 var category = document.getElementById("categoriaSelector");
+var btnVerTicket= document.getElementById('btnReservar');
+var btnSpinner = document.getElementById('btnSpinner');
+var btnFinal = document.getElementById('btnTicketFinal');
+
+
 
 function handleChangePrice() {
-
   let categoryValue =category.value
   let cantValue = cant.value;
 
@@ -55,16 +57,9 @@ function handleChangePrice() {
 
 
 
-// var btn= document.getElementById('btnReservar').innerHTML;
-// do{btn.classList.add('disabled')}
-// while(email.length()==0);
-
-
-
-
 
 function onSubmitTicketFinal() {
-  var cod = firstName[0].value.toUpperCase() + cant.value + lastName[0].value.toUpperCase() + resultado.innerHTML;
+  let cod = firstName.value[0].toUpperCase() + cant.value + lastName.value[0].toUpperCase() + resultado.innerHTML;
 //completo TicketFinal
   document.getElementById("firstName").innerHTML = firstName;
   document.getElementById("apellido").innerHTML = lastName;
@@ -73,22 +68,48 @@ function onSubmitTicketFinal() {
   document.getElementById("reservaCode").innerHTML = cod;
 
 // after submit 
-//cambiar button => spin => ¡listo!   
-// ambos buttons => toggle con class display hidden. 
+
+let btnClass= btnVerTicket.classList
+let btnSpinnerClass = btnSpinner.classList
+let btnFinalClass = btnFinal.classList
+btnClass.add('d-none')
+btnSpinnerClass.remove('d-none')
+
+setTimeout(function() {
+btnSpinnerClass.remove('d-none')
+btnClass.remove('d-none')
+btnSpinnerClass.add('d-none')
+btnVerTicket.innerHTML= '¡Listo!'
+btnClass.add('disabled')
+}, 1500)
+
+btnFinalClass.remove('disabled')
 }
+
+//NO FUNCIONA
+function reset(){
+  let btnClass= btnVerTicket.classList
+  btnClass.remove('disabled')
+  btnVerTicket.innerHTML= 'Reservar ticket'
+  cant.value = ''
+  email.value = ''
+  firstName.value = ''
+  lastName.value = ''
+  category.value = ''
+  resultado.value= ''
+};
 
 
 function beforeSubmit() {
-var btn= document.getElementById('btnReservar').classList
-btn.add('disabled')
+let btnClass= btnVerTicket.classList
+btnClass.add('disabled')
 let firstNameValue=firstName.value.length
 let lastNameValue=lastName.value.length
 let emailValue=email.value.length
 
 if(emailValue != 0 && firstNameValue != 0 && lastNameValue != 0 && cant.value > 0){
-  btn.remove('disabled')
+  btnClass.remove('disabled')
   }
- 
 }
 
 
@@ -103,15 +124,3 @@ function imprimir(id) {
   return true;
 }
 
-function reservar(){
-  // var btn= document.getElementById('btnReservar').innerHTML
-  // do{
-  //   btn.classList.remove('diseable')
-  // }
-  // while (resultado.length()!==0 && cant.length()!==0 && firstName.length()!==0 && lastName.length()!==0 && cod.length()!==0)
-
-
-// <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-//             <span class="visually-hidden">Loading...</span>
-
-}

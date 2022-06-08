@@ -218,11 +218,11 @@
       <div class="row row-cols-md-4 justify-content-center">
         <div class="col">
           <button
-            type="reset"
+            onclick="reset()"
+            type="button"
             class="btn col-12 btn-success mb-3 fs-4"
             id="clear"
-          >
-            Borrar
+          >Borrar
           </button>
         </div>
         <div class="col">
@@ -232,13 +232,21 @@
             id="btnReservar"
             >Reservar ticket
           </button>
+          <button
+          type="button"
+          class="btn col-12 mb-3 fs-4 d-none"
+          id="btnSpinner"
+          ><span class="spinner-grow spinner-grow-md text-success"  role="status" aria-hidden="true"></span>
+          <span class="visually-hidden">Loading...</span>
+        </button>
         </div>
       </div>
       <div class="row justify-content-center row-cols-md-2">
         <div class="col">
           <button
             type="button"
-            class="btn col-12 btn-outline-info fs-4"
+            id="btnTicketFinal"
+            class="btn col-12 btn-outline-info fs-4 disabled"
             data-bs-toggle="modal"
             data-bs-target="#modalResumen"
           >
