@@ -34,8 +34,9 @@ function handleChangePrice() {
   let categoryValue =category.value
   let cantValue = cant.value;
 
-  var total = 0;
-  var descuento = 0;
+  let total = 0;
+  let descuento = 0;
+  
   switch (categoryValue) {
     case "1":
       total = cantValue * 200 - cantValue * (200 * 0.8);
@@ -124,3 +125,7 @@ function imprimir(id) {
   return true;
 }
 
+function handleSelectDiscount(id){
+  category.value = id
+  handleChangePrice()
+}

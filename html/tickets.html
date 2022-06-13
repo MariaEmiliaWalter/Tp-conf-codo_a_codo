@@ -71,9 +71,9 @@
 
     <!-- Form tickets -->
     <div class="container ticketsCont mb-5">
-      <div class="row justify-content-center row-cols-1 row-cols-md-6">
-        <div class="col">
-          <div class="card" id="estudiante">
+      <div class="row justify-content-center row-cols-md-6">
+        <div class="col col-4">
+          <div class="card" id="estudiante" onclick="handleSelectDiscount(1)">
             <div class="card-body text-center">
               <h4 class="card-title">Estudiante</h4>
               <p class="card-text textSize">Tienen un descuento</p>
@@ -82,8 +82,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card" id="trainee">
+        <div class="col col-4">
+          <div class="card" id="trainee" onclick="handleSelectDiscount(2)">
             <div class="card-body text-center">
               <h4 class="card-title">Trainee</h4>
               <p class="card-text textSize">Tienen un descuento</p>
@@ -92,8 +92,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card" id="junior">
+        <div class="col col-4">
+          <div class="card" id="junior" onclick="handleSelectDiscount(3)">
             <div class="card-body text-center">
               <h4 class="card-title">Junior</h4>
               <p class="card-text textSize">Tienen un descuento</p>
@@ -114,7 +114,6 @@
       <div class="container">
         <h1>VALOR DEL TICKET $200</h1>
         <div class="row row-cols-md-4 mb-4 justify-content-center">
-          <!--row-cols-2-->
           <div class="col">
             <input
               type="text"
@@ -160,6 +159,7 @@
               min="0"
               step="1"
               value="0"
+              onchange="handleChangePrice()"
               required
             />
           </div>
